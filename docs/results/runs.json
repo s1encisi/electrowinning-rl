@@ -1,0 +1,1343 @@
+[
+  {
+    "config": {
+      "condition": 1,
+      "seed": 11,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "da94c9c574ebd2ae38fea82c4ad710285a095a72123bb88b4c7eefd81bf9b4f5",
+    "surrogate_sha256": "9050d3b7c4c2a07165f68c0ea4868cef7bac86bee76fb9398a7f5068de4674e5",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 31.5014914999997,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.9757484535450789,
+        "rmse": 0.21568946130321878
+      },
+      "as_out": {
+        "r2": 0.9878023544729301,
+        "rmse": 0.07682081596697855
+      },
+      "voltage": {
+        "r2": 0.9981760949537604,
+        "rmse": 0.20293853094187536
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.8763020833333334,
+        "pareto_points": 831,
+        "hypervolume": 6.306269509222403,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.0017498808584943209,
+        "best_feasible_profit": 710588.4895891976,
+        "synthetic_oracle_feasible_rate": 0.869140625,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.029947916666666668,
+        "search_seconds": 0.3934678000000531,
+        "search_evaluations": 1536,
+        "condition": 1,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.310546875,
+        "pareto_points": 245,
+        "hypervolume": 5.938994729666177,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.022791211621049055,
+        "best_feasible_profit": 683996.7631944538,
+        "synthetic_oracle_feasible_rate": 0.3177083333333333,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.021484375,
+        "search_seconds": 0.03404920000002676,
+        "search_evaluations": 1536,
+        "condition": 1,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.5266927083333334,
+        "pareto_points": 552,
+        "hypervolume": 6.039182452005434,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.008296711574851718,
+        "best_feasible_profit": 728412.6707189601,
+        "synthetic_oracle_feasible_rate": 0.5338541666666666,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.016927083333333332,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.6386000002294168,
+        "policy_batch_ms_p95": 0.7043649997967805,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 10.322415799999817,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 1,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  },
+  {
+    "config": {
+      "condition": 1,
+      "seed": 23,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "3d47dd9c3f300e7ede5837f6e53c4259d0cf2801a8135305d477f594270e3552",
+    "surrogate_sha256": "754d1f32dab42868e20eadc15c707e5bea8b00c9d4d6080d0ffdff1805c52014",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 32.738178900000094,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.9747622043220399,
+        "rmse": 0.21602351590724803
+      },
+      "as_out": {
+        "r2": 0.98823949881101,
+        "rmse": 0.07471314426598918
+      },
+      "voltage": {
+        "r2": 0.9982176255590742,
+        "rmse": 0.20284291739013247
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.865234375,
+        "pareto_points": 867,
+        "hypervolume": 6.300337218919276,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.0021387731329159305,
+        "best_feasible_profit": 701075.789072639,
+        "synthetic_oracle_feasible_rate": 0.8756510416666666,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.011067708333333334,
+        "search_seconds": 0.3792001000001619,
+        "search_evaluations": 1536,
+        "condition": 1,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.2864583333333333,
+        "pareto_points": 215,
+        "hypervolume": 5.910164441869258,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.02273339111613443,
+        "best_feasible_profit": 688038.4414130788,
+        "synthetic_oracle_feasible_rate": 0.3040364583333333,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.014322916666666666,
+        "search_seconds": 0.03267490000007456,
+        "search_evaluations": 1536,
+        "condition": 1,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.4309895833333333,
+        "pareto_points": 435,
+        "hypervolume": 6.049268059446391,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.0052360855776379285,
+        "best_feasible_profit": 727052.0139779773,
+        "synthetic_oracle_feasible_rate": 0.458984375,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.020182291666666668,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.7537000001320848,
+        "policy_batch_ms_p95": 1.0030050000978008,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 10.37364179999986,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 1,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  },
+  {
+    "config": {
+      "condition": 1,
+      "seed": 42,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "345a7c797152dadc05d0d5f992a55b98bde2fa2e56cb73d5b1560b05e5f9bb2a",
+    "surrogate_sha256": "ba5f368d84a3324953fb7b9ab01c0c2127284bb4636c98fe3d3e16e665e922ad",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 28.144246400000156,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.9762586676970173,
+        "rmse": 0.2113393156462757
+      },
+      "as_out": {
+        "r2": 0.9889662808681604,
+        "rmse": 0.07369233303316021
+      },
+      "voltage": {
+        "r2": 0.9980402614297377,
+        "rmse": 0.21070527931023503
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.8802083333333334,
+        "pareto_points": 926,
+        "hypervolume": 6.323600524118918,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.0020311535821263393,
+        "best_feasible_profit": 712375.0358122211,
+        "synthetic_oracle_feasible_rate": 0.828125,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.059244791666666664,
+        "search_seconds": 0.4132801999999174,
+        "search_evaluations": 1536,
+        "condition": 1,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.3020833333333333,
+        "pareto_points": 231,
+        "hypervolume": 5.942619528914743,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.023389693599862208,
+        "best_feasible_profit": 665006.9624249802,
+        "synthetic_oracle_feasible_rate": 0.30078125,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.026692708333333332,
+        "search_seconds": 0.03405650000013338,
+        "search_evaluations": 1536,
+        "condition": 1,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.3977864583333333,
+        "pareto_points": 343,
+        "hypervolume": 6.153495659138304,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.003577032508506336,
+        "best_feasible_profit": 724338.0446989109,
+        "synthetic_oracle_feasible_rate": 0.4108072916666667,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.01171875,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.7072000000789558,
+        "policy_batch_ms_p95": 0.9526299999379257,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 10.879078699999809,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 1,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  },
+  {
+    "config": {
+      "condition": 2,
+      "seed": 11,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "56a7fc0cb7c3d56650c366ddacaf93e9eaa70c858a8906ac46ae565352b1d671",
+    "surrogate_sha256": "c54e459327d8494d7d62527bec73ce7472e0c6ba9bc3858b54083af98fe837ea",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 32.252564699999766,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.9758030648158066,
+        "rmse": 0.21544647238099396
+      },
+      "as_out": {
+        "r2": 0.9878019293923938,
+        "rmse": 0.07682215453469977
+      },
+      "voltage": {
+        "r2": 0.9981798043464908,
+        "rmse": 0.20273206135447544
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.87109375,
+        "pareto_points": 834,
+        "hypervolume": 6.31561513806441,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.0016615137385382094,
+        "best_feasible_profit": 703989.179225593,
+        "synthetic_oracle_feasible_rate": 0.87109375,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.0234375,
+        "search_seconds": 0.39108600000008664,
+        "search_evaluations": 1536,
+        "condition": 2,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.3118489583333333,
+        "pareto_points": 239,
+        "hypervolume": 5.943263817817906,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.022796530041781563,
+        "best_feasible_profit": 684460.9909244691,
+        "synthetic_oracle_feasible_rate": 0.3177083333333333,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.020833333333333332,
+        "search_seconds": 0.036827099999754864,
+        "search_evaluations": 1536,
+        "condition": 2,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.52734375,
+        "pareto_points": 554,
+        "hypervolume": 6.044044040589561,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.008328278105723518,
+        "best_feasible_profit": 728185.3782906509,
+        "synthetic_oracle_feasible_rate": 0.5384114583333334,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.017578125,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.7236000001284992,
+        "policy_batch_ms_p95": 0.7899250000718894,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 11.368706499999917,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 2,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  },
+  {
+    "config": {
+      "condition": 2,
+      "seed": 23,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "4702de37cd9974e2083b868dc5504ca9223328c4fd5eb98faa23871c31e79262",
+    "surrogate_sha256": "c83da280798e0cbef12de13d478d5717aa68be033e4e1694e3ebc1564be0cd9b",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 30.899887600000056,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.9747751165391428,
+        "rmse": 0.21596824762161695
+      },
+      "as_out": {
+        "r2": 0.9882022164376576,
+        "rmse": 0.07483147592537273
+      },
+      "voltage": {
+        "r2": 0.9982163008756303,
+        "rmse": 0.20291828111308433
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.8873697916666666,
+        "pareto_points": 865,
+        "hypervolume": 6.241265700327599,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.002126342848161368,
+        "best_feasible_profit": 710329.39897278,
+        "synthetic_oracle_feasible_rate": 0.8860677083333334,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.01171875,
+        "search_seconds": 0.4490013999998155,
+        "search_evaluations": 1536,
+        "condition": 2,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.2877604166666667,
+        "pareto_points": 221,
+        "hypervolume": 5.919640376911586,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.022736849207402036,
+        "best_feasible_profit": 688522.2068987412,
+        "synthetic_oracle_feasible_rate": 0.3040364583333333,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.014973958333333334,
+        "search_seconds": 0.03549410000005082,
+        "search_evaluations": 1536,
+        "condition": 2,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.427734375,
+        "pareto_points": 439,
+        "hypervolume": 5.90727948700218,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.005201044743069331,
+        "best_feasible_profit": 727309.0534191076,
+        "synthetic_oracle_feasible_rate": 0.4615885416666667,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.016927083333333332,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.6432499999391439,
+        "policy_batch_ms_p95": 0.7345699998268174,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 10.309141599999748,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 2,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  },
+  {
+    "config": {
+      "condition": 2,
+      "seed": 42,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "012bf78f2f031360e8a33dff4087a363a234656ec1259df41703041b241464fe",
+    "surrogate_sha256": "060004f0b59690d77957b006a2dbe64035baf1e7436f15ac921e1aadca7ae890",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 24.868629300000066,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.9761817958855201,
+        "rmse": 0.21168118581507894
+      },
+      "as_out": {
+        "r2": 0.9889717310783848,
+        "rmse": 0.07367413027157481
+      },
+      "voltage": {
+        "r2": 0.9980309510958092,
+        "rmse": 0.21120519600891666
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.8841145833333334,
+        "pareto_points": 878,
+        "hypervolume": 6.32251149663969,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.0020726232062512864,
+        "best_feasible_profit": 717551.179252691,
+        "synthetic_oracle_feasible_rate": 0.8424479166666666,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.051432291666666664,
+        "search_seconds": 0.41101990000015576,
+        "search_evaluations": 1536,
+        "condition": 2,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.3020833333333333,
+        "pareto_points": 229,
+        "hypervolume": 5.9303581466355855,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.02338720350454848,
+        "best_feasible_profit": 666686.4408577541,
+        "synthetic_oracle_feasible_rate": 0.30078125,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.026692708333333332,
+        "search_seconds": 0.03353050000032454,
+        "search_evaluations": 1536,
+        "condition": 2,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.3971354166666667,
+        "pareto_points": 334,
+        "hypervolume": 6.139019536971933,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.003598078094467024,
+        "best_feasible_profit": 723246.6563475459,
+        "synthetic_oracle_feasible_rate": 0.412109375,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.011067708333333334,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.6387000000813714,
+        "policy_batch_ms_p95": 0.6748400003289134,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 10.319574099999954,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 2,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  },
+  {
+    "config": {
+      "condition": 3,
+      "seed": 11,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "57f5904b9ffd9451e5d74bfe5825434332006a4293fcbae72cd97f75c864237e",
+    "surrogate_sha256": "231f4c0904b83123ea9d197be4212aa1bf2c11e8fd028818bf6b25f6c135aed1",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 19.630832499999997,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.909801347211182,
+        "rmse": 0.3166197175916972
+      },
+      "as_out": {
+        "r2": 0.9537318296252603,
+        "rmse": 0.11164593780433837
+      },
+      "voltage": {
+        "r2": 0.9866816739006337,
+        "rmse": 0.38574024848424837
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.8483072916666666,
+        "pareto_points": 606,
+        "hypervolume": 5.013885540030255,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.0014658738169362688,
+        "best_feasible_profit": 680700.6790727717,
+        "synthetic_oracle_feasible_rate": 0.8776041666666666,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.021484375,
+        "search_seconds": 0.3789157000001069,
+        "search_evaluations": 1536,
+        "condition": 3,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.20768229166666666,
+        "pareto_points": 178,
+        "hypervolume": 4.648045475902451,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.017677197012273764,
+        "best_feasible_profit": 629722.5637858855,
+        "synthetic_oracle_feasible_rate": 0.2513020833333333,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.026041666666666668,
+        "search_seconds": 0.03375480000022435,
+        "search_evaluations": 1536,
+        "condition": 3,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.12174479166666667,
+        "pareto_points": 166,
+        "hypervolume": 4.374475869703689,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.015148221971836743,
+        "best_feasible_profit": 574077.103116683,
+        "synthetic_oracle_feasible_rate": 0.23046875,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.009114583333333334,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.6680500000584289,
+        "policy_batch_ms_p95": 0.7768249998207465,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 10.499516900000344,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 3,
+        "seed": 11,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  },
+  {
+    "config": {
+      "condition": 3,
+      "seed": 23,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "180a1a8eac6056678e2a161b6e5981c23210a203d1085978346fb18dc0fd9a24",
+    "surrogate_sha256": "034f12ff5959078f7112d4e5d3d7250b071a677e56b3fe74de100a6b5bb59816",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 19.339353899999878,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.9013178376169575,
+        "rmse": 0.3307935652713
+      },
+      "as_out": {
+        "r2": 0.9495541152682385,
+        "rmse": 0.11428667078409965
+      },
+      "voltage": {
+        "r2": 0.9873936249439433,
+        "rmse": 0.360950703393791
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.830078125,
+        "pareto_points": 634,
+        "hypervolume": 5.0477588564372535,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.0020927404007748825,
+        "best_feasible_profit": 674886.621388641,
+        "synthetic_oracle_feasible_rate": 0.84765625,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.021484375,
+        "search_seconds": 0.3734650999999758,
+        "search_evaluations": 1536,
+        "condition": 3,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.197265625,
+        "pareto_points": 173,
+        "hypervolume": 4.642515247559205,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.017727453380372456,
+        "best_feasible_profit": 654072.5331726497,
+        "synthetic_oracle_feasible_rate": 0.2552083333333333,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.012369791666666666,
+        "search_seconds": 0.03337729999975636,
+        "search_evaluations": 1536,
+        "condition": 3,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.12044270833333333,
+        "pareto_points": 169,
+        "hypervolume": 4.108743156616545,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.016570091213424128,
+        "best_feasible_profit": 663429.6163339171,
+        "synthetic_oracle_feasible_rate": 0.12239583333333333,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.013020833333333334,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.6579999999303254,
+        "policy_batch_ms_p95": 0.7348549994731002,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 10.39687350000031,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 3,
+        "seed": 23,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  },
+  {
+    "config": {
+      "condition": 3,
+      "seed": 42,
+      "samples": 4000,
+      "trees": 96,
+      "split": "chronological",
+      "total_steps": 16384,
+      "n_envs": 16,
+      "rollout_steps": 32,
+      "horizon": 24,
+      "hidden": 64,
+      "ppo_epochs": 4,
+      "batch_size": 256,
+      "learning_rate": 0.0003,
+      "gamma": 0.97,
+      "gae_lambda": 0.95,
+      "clip_ratio": 0.2,
+      "entropy_coef": 0.005,
+      "lambda_lr": 0.5,
+      "cost_limit": 0.02,
+      "max_lambda": 50.0,
+      "action_fraction": 0.1,
+      "eval_episodes": 64,
+      "population": 64,
+      "generations": 24,
+      "device": "cpu",
+      "process": {
+        "cu_limit": 8.0,
+        "as_min": 4.0,
+        "current_density_max": 340.0,
+        "cell_voltage_max": 2.5,
+        "cu_as_ratio_max": 0.8,
+        "cathodes": 35,
+        "cathode_area": 2.2638,
+        "cells": 16,
+        "copper_price": 98.44,
+        "reprocessing_cost": 0.14,
+        "feedstock_cost": 82.64,
+        "treatment_cost": 2.5,
+        "treatment_as_reference": 11.64,
+        "electricity_price": 0.6,
+        "operating_cost": 200.0,
+        "objective_scale": [
+          10.0,
+          10.0,
+          10000.0,
+          500000.0
+        ]
+      }
+    },
+    "provenance": {
+      "python": "3.11.14",
+      "platform": "Windows",
+      "packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "scipy": "1.16.0",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.5.2",
+        "torch": "2.12.1",
+        "gymnasium": "1.2.3",
+        "pymoo": "0.6.1.5"
+      }
+    },
+    "source": "synthetic-demo",
+    "dataset_sha256": "f928632565f0199bdf406fc76eb6b394f3f1b15610283a8ae3ee0734aa150086",
+    "surrogate_sha256": "071b0e0dada7c7de1c09f85b70b152fa41c7e8c439c08a679fa9dc5fdd24efa9",
+    "hypervolume_reference": [
+      1.5,
+      0.0,
+      3.0,
+      1.0
+    ],
+    "evaluation_note": "Different search/training budgets and front sizes; not an equal-budget superiority claim.",
+    "wall_seconds": 24.24641310000061,
+    "surrogate_test": {
+      "cu_out": {
+        "r2": 0.9090481147721184,
+        "rmse": 0.31041303613440824
+      },
+      "as_out": {
+        "r2": 0.9495792382138252,
+        "rmse": 0.11288037708677134
+      },
+      "voltage": {
+        "r2": 0.9869637870461669,
+        "rmse": 0.3737777696649038
+      }
+    },
+    "methods": [
+      {
+        "method": "nsga2",
+        "candidates": 1536,
+        "feasible_rate": 0.87109375,
+        "pareto_points": 737,
+        "hypervolume": 5.194397561275149,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.001504848516498232,
+        "best_feasible_profit": 699969.5678822444,
+        "synthetic_oracle_feasible_rate": 0.875,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.02734375,
+        "search_seconds": 0.3766784999997981,
+        "search_evaluations": 1536,
+        "condition": 3,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "random",
+        "candidates": 1536,
+        "feasible_rate": 0.19270833333333334,
+        "pareto_points": 184,
+        "hypervolume": 4.801927957443563,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.017279293875658675,
+        "best_feasible_profit": 665225.4303676265,
+        "synthetic_oracle_feasible_rate": 0.23567708333333334,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.026692708333333332,
+        "search_seconds": 0.03335799999968003,
+        "search_evaluations": 1536,
+        "condition": 3,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      },
+      {
+        "method": "ppo",
+        "candidates": 1536,
+        "feasible_rate": 0.14518229166666666,
+        "pareto_points": 159,
+        "hypervolume": 3.9990303778584293,
+        "hv_points_outside_reference": 0,
+        "mean_normalized_violation": 0.021005674169001388,
+        "best_feasible_profit": 510334.88756143977,
+        "synthetic_oracle_feasible_rate": 0.130859375,
+        "surrogate_feasible_but_oracle_infeasible_rate": 0.041015625,
+        "policy_batch_size": 64,
+        "policy_batch_ms_p50": 0.6441499999709777,
+        "policy_batch_ms_p95": 0.6928199996309559,
+        "latency_scope": "CPU policy forward pass, excludes surrogate and I/O",
+        "training_seconds": 10.349385800000164,
+        "training_evaluations": 16384,
+        "policy_rollout_evaluations": 1536,
+        "condition": 3,
+        "seed": 42,
+        "data_source": "synthetic-demo"
+      }
+    ]
+  }
+]
