@@ -1,0 +1,76 @@
+{
+  "conditions": [
+    1,
+    2,
+    3
+  ],
+  "seeds": [
+    11,
+    23,
+    42
+  ],
+  "config": {
+    "condition": 1,
+    "seed": 42,
+    "samples": 4000,
+    "trees": 96,
+    "split": "chronological",
+    "total_steps": 16384,
+    "n_envs": 16,
+    "rollout_steps": 32,
+    "horizon": 24,
+    "hidden": 64,
+    "ppo_epochs": 4,
+    "batch_size": 256,
+    "learning_rate": 0.0003,
+    "gamma": 0.97,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "entropy_coef": 0.005,
+    "lambda_lr": 0.5,
+    "cost_limit": 0.02,
+    "max_lambda": 50.0,
+    "action_fraction": 0.1,
+    "eval_episodes": 64,
+    "population": 64,
+    "generations": 24,
+    "device": "cpu",
+    "process": {
+      "cu_limit": 8.0,
+      "as_min": 4.0,
+      "current_density_max": 340.0,
+      "cell_voltage_max": 2.5,
+      "cu_as_ratio_max": 0.8,
+      "cathodes": 35,
+      "cathode_area": 2.2638,
+      "cells": 16,
+      "copper_price": 98.44,
+      "reprocessing_cost": 0.14,
+      "feedstock_cost": 82.64,
+      "treatment_cost": 2.5,
+      "treatment_as_reference": 11.64,
+      "electricity_price": 0.6,
+      "operating_cost": 200.0,
+      "objective_scale": [
+        10.0,
+        10.0,
+        10000.0,
+        500000.0
+      ]
+    }
+  },
+  "provenance": {
+    "python": "3.11.14",
+    "platform": "Windows",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "scipy": "1.16.0",
+      "scikit-learn": "1.7.2",
+      "joblib": "1.5.2",
+      "torch": "2.12.1",
+      "gymnasium": "1.2.3",
+      "pymoo": "0.6.1.5"
+    }
+  }
+}

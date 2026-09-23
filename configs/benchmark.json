@@ -1,0 +1,12 @@
+{
+  "samples": 4000,
+  "trees": 96,
+  "total_steps": 16384,
+  "n_envs": 16,
+  "rollout_steps": 32,
+  "horizon": 24,
+  "eval_episodes": 64,
+  "population": 64,
+  "generations": 24,
+  "device": "cpu"
+}

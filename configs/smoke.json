@@ -1,0 +1,13 @@
+{
+  "samples": 200,
+  "trees": 8,
+  "total_steps": 128,
+  "n_envs": 4,
+  "rollout_steps": 16,
+  "horizon": 8,
+  "ppo_epochs": 2,
+  "batch_size": 32,
+  "eval_episodes": 4,
+  "population": 16,
+  "generations": 3
+}
